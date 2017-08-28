@@ -1,0 +1,81 @@
+Go Daddy Account
+
+with name of Kumar Nishnat
+Customer Number: 163513916
+username: aryan143.aryan@gmail.com
+password: Onlineshopping$129
+PIN: 2570
+97622
+-------
+
+Go-Daddy e-mail account
+
+aimib7.com/webmail
+
+username: info@aimib7.com
+Password: 9dRWBt0r?MvL
+
+-------
+
+AIMIB7 Cpanel
+
+username: aimib7acc
+password: !passAimib7$$
+
+-------
+
+FTP Detail
+
+host: 148.66.136.214
+username: aimib7acc@aimib7.com
+password: !passAimib7$$
+
+
+
+username: ftp-access-aimib7
+password: QPaW!TTm,$K@
+
+FTP Username: ftp-access-aimib7@aimib7.com
+FTP server: aimib7.com
+FTP & explicit FTPS port:  21
+
+
+FTP Username: aimib7acc
+FTP server: aimib7.com
+FTP & explicit FTPS port:  21
+
+148.66.136.214
+
+------
+
+======== G-Sute admin panel ===========
+
+a.joseph@aimib7.com/info@aimib7.com
+!passAimib7$
+
+------
+
+Domain Nameserver Name: 
+
+ns01.domaincontrol.com
+ns02.domaincontrol.com
+
+------
+
+____________________
+
+
+sport in ftp: n5v$kC{Om)Sb
+
+
+light blue: #c3e1eb
+dark blue: #3563b9
+bright blue: #01b0f1
+gray: #3f484d
+light gray: #576163
+
+Google map
+___________
+
+KEY: AIzaSyCQNVmW98YGmSr-hD1t27Q2QJ3n-yjPr6U
+AIzaSyCue_A7_StT1tZ5wO-PKfiweJFOJd4sUjs (working)
