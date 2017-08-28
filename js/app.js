@@ -408,26 +408,59 @@ jQuery(document).ready(function($) {
   //Json data callback end
 
   //News carousel
-  var owlItem = $("#news");
-  var timer = 8000;
-  owlItem.owlCarousel({
+  var newsItem = $("#news");
+  var newsItemTimer = 8000;
+  newsItem.owlCarousel({
     items: 1,
     loop: true,
     autoplay: true,
-    autoplayTimeout: timer,
+    autoplayTimeout: newsItemTimer,
     autoplayHoverPause: true,
     autoHeight: true
   });
 
-  $("#news").on('mouseenter', function() {
-    owlItem.trigger('stop.owl.autoplay');
+  newsItem.on('mouseenter', function() {
+    newsItem.trigger('stop.owl.autoplay');
   });
 
-  $("#news").on('mouseleave', function() {
-    owlItem.trigger('play.owl.autoplay', [timer]);
+  newsItem.on('mouseleave', function() {
+    newsItem.trigger('play.owl.autoplay', [newsItemTimer]);
   });
   //News carousel end
 
+  // Performers carousel
+  var performersItem = $("#performers-carousel");
+  var performersItemTimer = 5000;
+  performersItem.owlCarousel({
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: performersItemTimer,
+    autoplayHoverPause: true,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        370:{
+            items:2
+        },
+        660:{
+            items:3
+        },
+        768:{
+            items:4
+        }
+    }
+  });
+
+  performersItem.on('mouseenter', function() {
+    performersItem.trigger('stop.owl.autoplay');
+  });
+
+  performersItem.on('mouseleave', function() {
+    performersItem.trigger('play.owl.autoplay', [performersItemTimer]);
+  });
+  // Performers carousel end
 });
 
 //Initialize google map for contact setion with your location.

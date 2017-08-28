@@ -1,6 +1,13 @@
 /*
 1. General
 **********************************************************************/
+@font-face {
+    font-family: 'aimib7SloganCursive';
+    src: url('../fonts/aimib7SloganCursive.eot');
+    src: url('../fonts/aimib7SloganCursive.eot?#iefix') format('embedded-opentype'), url('../fonts/aimib7SloganCursive.woff') format('woff'), url('../fonts/aimib7SloganCursive.ttf') format('truetype'), url('../fonts/aimib7SloganCursive.svg#aimib7SloganCursive') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
   font-family: Helvetica, Arial, Verdana, sans-serif;
@@ -118,7 +125,7 @@ p {
   margin-top:20px;
 }
 
-.logo-slogan{display: block; margin-left: 55px; font-style: italic; font-size: 14px; margin-top: -15px;}
+.logo-slogan{color: #3563b9; display: block; margin-left: 55px; font-size: 10px; font-weight: normal; letter-spacing: 1px; margin-top: -20px;}
 
 /******
 2. Layout
@@ -334,6 +341,14 @@ p {
 
 .thumbnail:hover .mask {
   top: 0;
+}
+
+.thumbnail .mask>img{
+  width: 100px !important;
+  background: #fff;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
 
