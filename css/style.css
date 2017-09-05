@@ -89,6 +89,7 @@ p {
   box-shadow: none;
   font-size: 15px;
   color: #3563b9;
+  font-weight: 700;
 }
 
 .navbar .nav>li:hover>a, .navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus {
@@ -124,8 +125,6 @@ p {
   color: #fff;
   margin-top:20px;
 }
-
-.logo-slogan{color: #3563b9; display: block; margin-left: 55px; font-size: 10px; font-weight: normal; letter-spacing: 1px; margin-top: -20px;}
 
 /******
 2. Layout
@@ -276,7 +275,6 @@ p {
   border-radius: 0;
   box-shadow: none;
   text-align: center;
-  background: #576163;
 }
 
 .thumbnail .more {
@@ -314,44 +312,15 @@ p {
 }
 
 .thumbnail h3 {
-  color: #fff !important;
+  color: #fff;
   margin-top: 10px;
   font-size: 20px;
+  font-weight: 700;
 }
 
 .thumbnail>p {
   padding-bottom: 20px;
 }
-
-.thumbnail .mask {
-  opacity: 0.85;
-  filter: alpha(opacity=85);
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #181A1C;
-  position: absolute;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2 s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-}
-
-.thumbnail:hover .mask {
-  top: 0;
-}
-
-.thumbnail .mask>img{
-  width: 100px !important;
-  background: #fff;
-  padding: 10px;
-  margin: 0 auto;
-  margin-top: 20px;
-}
-
-
 /*
 2.4 Socail icons
 ************/
@@ -582,19 +551,48 @@ span.highlight{color: #f00; font-size: 16px; font-weight: 700;}
 ******************************************************************/
 .skype-section{background: #3f484d; display: none;}
 .skype-section .skype-section-content{position: relative; background: #fff; padding: 15px;}
-.skype-section .skype-section-content h3{color: #052f5b;}
+.skype-section .skype-section-content h2{color: #052f5b;}
 .skype-section .skype-section-content ul{list-style: circle;}
 
 /*
 3.3 About
 ******************************************************************/
-
+.team{
+  background: #fff;
+  padding: 20px;
+}
 .team .thumbnail {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   padding: 10px;
-  border: 1px solid #fff;
+  width: 25%;
+  float: left;
+}
+
+.team .thumbnail h3{color: #181A1C;}
+
+.thumbnail-img{position: relative;}
+
+.thumbnail-img img:nth-child(2n){
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 70px !important;
+}
+
+.team .testimonial{
+  float: left;
+  width: 75%;
+  font-size: 22px;
+  line-height: 30px;
+  font-style: italic;
+  padding-left: 20px;
+}
+
+.team .testimonial p{color: #eb7d3c;}
+
+.team .testimonial img{
+  width: 120px !important;
+  float: right;
+  margin-right: 20px;
 }
 
 .team .thumbnail:hover .social {
@@ -603,22 +601,6 @@ span.highlight{color: #f00; font-size: 16px; font-weight: 700;}
 
 .team .thumbnail:hover .social a {
   color: #fff;
-}
-
-.team .thumbnail .mask {
-  background: #3563b9;
-}
-
-.team .thumbnail .mask h2 {
-  margin-top: 20%;
-}
-
-.team .thumbnail .mask, .team .thumbnail .mask h3, .team .thumbnail .mask p, .team .thumbnail:hover h3, .team .thumbnail:hover .social a:hover {
-  color: #fff;
-}
-
-.team .thumbnail .mask p {
-  padding: 0 10px;
 }
 
 .about-text {
@@ -630,9 +612,19 @@ span.highlight{color: #f00; font-size: 16px; font-weight: 700;}
   font-size: 16px;
 }
 
-#performers, #expertise{
+#performers{
   padding: 30px 0;
 }
+
+#performers>h2, #expertise>h2{
+  margin-bottom: 30px;
+}
+
+.expertise-twitter{margin-top: 30px;}
+
+#twitter-feed{float: right;}
+
+.timeline-Footer{display: none;}
 
 /*********************************************************************
                         SKILLS BAR
@@ -1022,10 +1014,16 @@ span.highlight{color: #f00; font-size: 16px; font-weight: 700;}
   #news p{
     font-size: 16px;
   }
+
+  .team .thumbnail{width: 100%;}
+  .team .testimonial{width: 100%; font-size: 18px; padding-left: 0;}
+  .team .testimonial img{float: left;}
 }
 
 @media (max-width: 979px) and (min-width: 768px) {
   .contact-form {
     margin-left: 2% !important;
   }
+
+  .team .testimonial{font-size: 20px;}
 }

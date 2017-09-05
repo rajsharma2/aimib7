@@ -432,25 +432,13 @@ jQuery(document).ready(function($) {
   var performersItem = $("#performers-carousel");
   var performersItemTimer = 5000;
   performersItem.owlCarousel({
+    items: 1,
     loop: true,
     autoplay: true,
     autoplayTimeout: performersItemTimer,
     autoplayHoverPause: true,
     responsiveClass:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        370:{
-            items:2
-        },
-        660:{
-            items:3
-        },
-        768:{
-            items:4
-        }
-    }
+    autoHeight: true
   });
 
   performersItem.on('mouseenter', function() {
@@ -461,6 +449,8 @@ jQuery(document).ready(function($) {
     performersItem.trigger('play.owl.autoplay', [performersItemTimer]);
   });
   // Performers carousel end
+
+
 });
 
 //Initialize google map for contact setion with your location.
@@ -487,11 +477,11 @@ function initializeMap() {
     // Info Window Content
     var infoWindowContent = [
         ['<div class="info_content">' +
-        '<h4>Pune aimIB7</h4>' + '</div>'],
+        '<h4>Pune aimIB7&trade;</h4>' + '</div>'],
         ['<div class="info_content">' +
-        '<h4>Mumbai aimIB7</h4>' + '</div>'],
+        '<h4>Mumbai aimIB7&trade;</h4>' + '</div>'],
         ['<div class="info_content">' +
-        '<h4>Ahmedabad aimIB7</h4>' + '</div>']
+        '<h4>Ahmedabad aimIB7&trade;</h4>' + '</div>']
     ];
 
     // Display multiple markers on a map
