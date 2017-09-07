@@ -54,8 +54,16 @@ h1 {
 }
 
 p {
-  padding: 10px;
+  padding: 5px 10px;
   color: #000;
+}
+
+img{
+  /*image-rendering: -moz-crisp-edges;*/
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
 }
 
 .navbar {
@@ -124,6 +132,15 @@ p {
   background: #3563b9;
   color: #fff;
   margin-top:20px;
+}
+
+.logo-slogan{
+  display: block;
+  margin-left: 60px;
+  font-style: italic;
+  font-size: 10px;
+  margin-top: -22px;
+  color: #00459a;
 }
 
 /******
@@ -581,18 +598,21 @@ span.highlight{color: #f00; font-size: 16px; font-weight: 700;}
 .team .testimonial{
   float: left;
   width: 75%;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 30px;
   font-style: italic;
   padding-left: 20px;
 }
 
 .team .testimonial p{color: #eb7d3c;}
+.team .testimonial p:last-child{margin-bottom: 20px;}
 
 .team .testimonial img{
-  width: 120px !important;
-  float: right;
-  margin-right: 20px;
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+  top: auto;
+  width: 150px !important;
 }
 
 .team .thumbnail:hover .social {
@@ -989,9 +1009,7 @@ span.highlight{color: #f00; font-size: 16px; font-weight: 700;}
   .project-description {
     padding-left: 20px;
   }
-  .price-column, .testimonial {
-    margin-top: 30px;
-  }
+
   .map-wrapper {
     height: auto;
   }
@@ -1016,8 +1034,8 @@ span.highlight{color: #f00; font-size: 16px; font-weight: 700;}
   }
 
   .team .thumbnail{width: 100%;}
-  .team .testimonial{width: 100%; font-size: 18px; padding-left: 0;}
-  .team .testimonial img{float: left;}
+  .team .testimonial{width: 100%; font-size: 16px; padding-left: 0;}
+  .team .testimonial img{position: relative; float: right; right: 0;}
 }
 
 @media (max-width: 979px) and (min-width: 768px) {
