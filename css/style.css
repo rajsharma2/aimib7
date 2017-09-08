@@ -646,6 +646,9 @@ span.highlight{color: #f00; font-size: 16px; font-weight: 700;}
 
 .timeline-Footer{display: none;}
 
+.twitter-widget-holder{ max-height:400px; padding:20px; background:#fff; border-radius:3px; box-shadow:2px 2px 3px rgba(0,0,0,.1); }
+
+
 /*********************************************************************
                         SKILLS BAR
 *********************************************************************/
