@@ -32,6 +32,8 @@ a {
   text-decoration: none;
 }
 
+.hidden-links-seo{display: none;}
+
 .navbar .nav>li>a:focus, .navbar .nav>li>a:hover {
   color: #3f484d !important;
 }

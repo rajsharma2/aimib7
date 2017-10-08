@@ -2,6 +2,9 @@
 
 jQuery(document).ready(function($) {
 
+  // hidden links for SEO work
+  $('.hidden-links-seo').hide();
+  
   var lastId,
     topMenu = $("#top-navigation"),
     topMenuHeight = topMenu.outerHeight(),
@@ -451,7 +454,7 @@ jQuery(document).ready(function($) {
   // Performers carousel end
 
   //Twitter widget
-  
+
   var widgetWrapper=$(".twitter-widget-holder");
 	/* initialize scrollbar */
 	widgetWrapper.mCustomScrollbar({
@@ -470,12 +473,12 @@ jQuery(document).ready(function($) {
 		widgetWrapper.find("iframe").css("pointer-events","auto");
 	}).on("focus",function(){
 		widgetWrapper.trigger("mouseenter");
-	
+
 	});
 
       /* insert twitter widget js in window load fn */
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-	
+
 	//Twitter widget end here
 
 });
