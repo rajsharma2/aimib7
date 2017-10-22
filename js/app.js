@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
 
   // hidden links for SEO work
   $('.hidden-links-seo').hide();
-  
+
   var lastId,
     topMenu = $("#top-navigation"),
     topMenuHeight = topMenu.outerHeight(),
@@ -12,14 +12,38 @@ jQuery(document).ready(function($) {
     menuItems = topMenu.find("a"),
     // Anchors corresponding to menu items
     scrollItems = menuItems.map(function() {
+
       var href = $(this).attr("href");
       if (href.indexOf("#") === 0) {
+
         var item = $($(this).attr("href"));
         if (item.length) {
           return item;
         }
+
       }
     });
+
+    //blog menu script
+
+    $('.nav li').click(function(e) {
+      $('.nav li').removeClass('active');
+        if($('ul', this).hasClass('active')){
+          $('ul', this).stop().slideUp(200);
+          $('ul', this).removeClass('active');
+        }else{
+          $('ul', this).stop().slideDown(200);
+          $('ul', this).addClass('active');
+        }
+        e.stopPropagation();
+    });
+
+    $('body, .nav').click(function(e) {
+      $('.nav li ul').stop().slideUp(200);
+      $('.nav li ul').removeClass('active');
+    });
+
+    //blog menu script end here
 
   //Get width of container
   var containerWidth = $('.section .container').width();
@@ -37,11 +61,11 @@ jQuery(document).ready(function($) {
       $('.scrollup').fadeOut();
     }
 
-    if ($(this).scrollTop() > 130) {
-      $('.navbar').addClass('navbar-fixed-top animated fadeInDown');
-    } else {
-      $('.navbar').removeClass('navbar-fixed-top animated fadeInDown');
-    }
+    // if ($(this).scrollTop() > 130) {
+    //   $('.navbar').addClass('navbar-fixed-top animated fadeInDown');
+    // } else {
+    //   $('.navbar').removeClass('navbar-fixed-top animated fadeInDown');
+    // }
 
     // Get container scroll position
     var fromTop = $(this).scrollTop() + topMenuHeight + 10;
@@ -94,11 +118,11 @@ jQuery(document).ready(function($) {
         if ($target) {
 
           $(this).click(function() {
-
+            $('.nav li ul').stop().slideUp(200);
+            $('.nav li ul').removeClass('active');
             //Hack collapse top navigation after clicking
             topMenu.parent().attr('style', 'height:0px').removeClass('in'); //Close navigation
             $('.navbar .btn-navbar').addClass('collapsed');
-
             var targetOffset = $target.offset().top - 63;
             $('html, body').animate({
               scrollTop: targetOffset
@@ -110,6 +134,13 @@ jQuery(document).ready(function($) {
     });
   });
 
+  // $('.btn-navbar').click(function(e){
+  //   if($('body').hasClass('fixed')){
+  //       $('body').removeClass('fixed');
+  //   }else{
+  //     $('body').addClass('fixed');
+  //   }
+  // });
   /*
   Sand mail
   **********************************************************************/
@@ -476,8 +507,8 @@ jQuery(document).ready(function($) {
 
 	});
 
-      /* insert twitter widget js in window load fn */
-      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  /* insert twitter widget js in window load fn */
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
 	//Twitter widget end here
 

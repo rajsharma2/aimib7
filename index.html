@@ -62,7 +62,7 @@
     }(document, 'script', 'facebook-jssdk'));
   </script>
 
-  <div class="navbar">
+  <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
         <a href="javascript:void(0)" class="brand">
@@ -78,7 +78,18 @@
             <li class="active"><a href="#home">Home</a></li>
             <li><a href="#performers">Our Performers</a></li>
             <li><a href="#expertise">Our Expertise</a></li>
+            <li><a href="#gallary" class="fb-gallary-btn">Gallery</a></li>
+            <li><a href="javascript:void(0)">Blog<i class='angle-down'></i></a>
+              <ul>
+                <li><a href="https://mailtoashishjoseph.wixsite.com/website" target="_blank">English</a></li>
+                <li><a href="https://mailtoashishjoseph.wixsite.com/website" target="_blank">Maths</a></li>
+                <li><a href="https://mailtoashishjoseph.wixsite.com/website" target="_blank">Business Studies</a></li>
+                <li><a href="https://mailtoashishjoseph.wixsite.com/website" target="_blank">Economics</a></li>
+                <li><a href="https://mailtoashishjoseph.wixsite.com/website" target="_blank">Physics</a></li>
+              </ul>
+            </li>
             <li><a href="#contact">Contact</a></li>
+
           </ul>
         </div>
         <!-- End main navigation -->
@@ -194,6 +205,23 @@
           <div class="span4">
             <div class="centered service">
               <div class="circle-border zoom-in">
+                <img class="img-circle" src="images/ib-service-physics.jpg" alt="ib physics services">
+              </div>
+              <h3>Physics</h3>
+              <ul>
+                <a href="javascript:void(0)" data-id="ib-physics1" class="selector">
+                  <li>IB Diploma Programme Physics (HL) coaching</li>
+                </a>
+                <a href="javascript:void(0)" data-id="ib-physics2" class="selector">
+                  <li>IB Diploma Programme Physics (SL) coaching</li>
+                </a>
+              </ul>
+            </div>
+          </div>
+
+          <div class="span4">
+            <div class="centered service">
+              <div class="circle-border zoom-in">
                 <img class="img-circle" src="images/ib-service-business-studies.jpg" alt="ib business studies services">
               </div>
               <h3>Business Studies</h3>
@@ -221,6 +249,8 @@
               </ul>
             </div>
           </div>
+
+          <div class="clearfix"></div>
 
           <div class="span4 skype-option">
             <div class="centered service">
@@ -579,6 +609,12 @@
   </div>
   <!-- About us section end -->
 
+  <!-- Facebook post image gallary -->
+  <div id="gallary" class="fb-gallary">
+    <div class='dsm-ww-facebook-photo-albums' data-embed-id='4214'></div><script src='https://www.displaysocialmedia.com/app/embed/facebook-photo-albums/widget.js'></script>
+  </div>
+  <!-- Facebook post image gallary end here  -->
+
   <!-- Contact section start -->
   <div id="contact" class="contact">
     <div class="section primary-section">
@@ -688,11 +724,18 @@
             </li>
           </ul>
           <div class="fb-like" data-href="http://aimib7.com/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+
         </div>
       </div>
     </div>
+    <div class="disclaimer">
+      <p>All product and company names are trademarks or registered trademarks of respective holders. Use of them does not imply any affiliation with or endorsement by them.</p>
+    </div>
   </div>
   <!-- Contact section edn -->
+
+
+
   <!-- Footer section start -->
   <div class="footer">
     <p>&copy; 2017 aimIB7&trade;</p>
@@ -712,12 +755,12 @@
     <h1><a href="http://aimib7.com/"><em><strong>IGCSE Coaching</strong></em></a></h1>
   </div>
   <!-- Include javascript -->
-  <script type="text/javascript" src="js/jquery.js#new"></script>
-  <script type="text/javascript" src="js/bootstrap.js#new"></script>
-  <script type="text/javascript" src="js/modernizr.custom.js#new"></script>
-  <script type="text/javascript" src="js/jquery.placeholder.js#new"></script>
-  <script type="text/javascript" src="js/jquery.inview.js#new"></script>
-  <script type="text/javascript" src="js/owl.carousel.min.js#new"></script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/modernizr.custom.js"></script>
+  <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+  <script type="text/javascript" src="js/jquery.inview.js"></script>
+  <script type="text/javascript" src="js/owl.carousel.min.js"></script>
   <!-- custom scrollbar plugin script -->
   <script src="js/jquery.mCustomScrollbar.min.js"></script>
   <!-- css3-mediaqueries.js for IE8 or older -->

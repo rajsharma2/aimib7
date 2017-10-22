@@ -76,7 +76,7 @@ img{
 
 .navbar-fixed-top {
   min-height: 60px;
-  height: 60px;
+  height: 73px;
   padding-top: 0;
 }
 
@@ -143,6 +143,42 @@ img{
   font-size: 10px;
   margin-top: -22px;
   color: #00459a;
+}
+
+.nav li ul {
+  border-bottom: 5px solid #e2e2e2;
+  display: none;
+  position: absolute;
+  width: 170px;
+  z-index: 10;
+}
+
+.nav li ul li {
+  border-top: 1px solid #444;
+  display: block;
+}
+
+.nav li ul li:first-child { border-top: none; }
+
+.nav li ul li a {
+  background: #3563b9;
+  display: block;
+  padding: 10px 14px;
+  color: #ffffff;
+}
+
+.nav li ul li a:hover { background: #c3e1eb; color: #000;}
+
+.nav .angle-down {
+  margin-left: 6px;
+  margin-top: 6px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #181a1c;
+  display: inline-block;
+  vertical-align: top;
 }
 
 /******
@@ -378,7 +414,7 @@ img{
 /*
 3. Sections
 ***************************************************************************/
-#home{background: #fff; position: relative;}
+#home{background: #fff; position: relative; margin-top:73px;}
 
 
 #home .home-nav-links {
@@ -566,6 +602,17 @@ img{
 span.highlight{color: #f00; font-size: 16px; font-weight: 700;}
 
 /*
+Facebook gallary
+******************************************************************/
+.fb-gallary{display: block; position: relative; width: 100%; background-color: #3f484d; padding:20px;}
+.close-fb-gallary{position: absolute; top: 40px; right: 40px; color: #808080; font-size: 30px;}
+.close-fb-gallary:hover{color: #3563b9;}
+body .dsm-ww-facebook-photo-albums{
+  background: #fff;
+}
+.mfp-container{position: fixed !important;}
+
+/*
 3.1.1 Skype Services
 ******************************************************************/
 .skype-section{background: #3f484d; display: none;}
@@ -751,7 +798,7 @@ span.highlight{color: #f00; font-size: 16px; font-weight: 700;}
 ********************************************************************/
 
 .contact {
-  background: #FECE1A;
+  background: #e2e2e2;
 }
 
 .contact h1, .contact h2, .contact h3, .contact h4, .contact h5, .contact h6, .contact .section .title>p, .contact .social>li>a {
@@ -882,6 +929,14 @@ span.highlight{color: #f00; font-size: 16px; font-weight: 700;}
   width: 100%;
 }
 
+.disclaimer{
+  text-align: center;
+  font-style: italic;
+  display: inline-block;
+  margin: 0 auto;
+  width: 100%;
+}
+
 /*
 3.8 Footer
 ********************************************************************/
@@ -946,7 +1001,13 @@ span.highlight{color: #f00; font-size: 16px; font-weight: 700;}
   body {
     padding-left: 0;
     padding-right: 0;
+    width: 100%;
   }
+
+  .fixed{
+    position: fixed;
+  }
+
   .navbar-fixed-top, .navbar-fixed-bottom {
     position: fixed;
   }
@@ -954,6 +1015,8 @@ span.highlight{color: #f00; font-size: 16px; font-weight: 700;}
     line-height: 20px;
     vertical-align: middle;
   }
+
+  .nav li ul{position: relative;}
   .section {
     padding-left: 20px;
     padding-right: 20px;
@@ -963,6 +1026,19 @@ span.highlight{color: #f00; font-size: 16px; font-weight: 700;}
     margin-left: 0px;
     margin-right: 0px;
   }
+
+  .navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner{padding:0 20px;}
+  .nav-collapse{
+    position: fixed;
+    z-index: 11;
+    background: rgb(255, 255, 255);
+    top: 73px;
+    left: 0px;
+    bottom:0;
+    padding-left: 20px;
+    overflow-y: scroll;
+  }
+  .nav-collapse.collapse{overflow-y: scroll;}
   .nav-collapse {
     clear: both;
   }
@@ -998,11 +1074,12 @@ span.highlight{color: #f00; font-size: 16px; font-weight: 700;}
     left: auto;
     top: auto;
     transform: none;
+    padding: 10px;
   }
 }
 
 @media (max-width: 767px) {
-
+  .nav li ul{position: relative;}
   .section-img, .section-content{float: none; width: 100%;}
   .close-services{right: 10px; top: 10px; position: fixed;}
   .skype-section .skype-section-content .close-services{position: absolute;}
