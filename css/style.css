@@ -557,7 +557,7 @@ img{
   display: inherit;
 }
 
-#service .tab-content .row-fluid [class*="span"]:nth-child(5n) {
+#service .tab-content .row-fluid div:nth-child(4n+1){
   margin-left: 0;
 }
 
@@ -604,14 +604,19 @@ span.highlight{color: #f00; font-size: 16px; font-weight: 700;}
 /*
 Facebook gallary
 ******************************************************************/
-.fb-gallary{display: block; position: relative; width: 100%; background-color: #3f484d; padding:20px;}
-.close-fb-gallary{position: absolute; top: 40px; right: 40px; color: #808080; font-size: 30px;}
-.close-fb-gallary:hover{color: #3563b9;}
-body .dsm-ww-facebook-photo-albums{
+.fb-gallery{display: block; visibility: hidden; position: fixed; top: 0; bottom: 0; background: #fff; width: 100%; padding:20px; z-index: 1040;}
+.close-fb-gallery{position: fixed; top: 20px; right: 20px; color: #808080; font-size: 25px; background-color: #e2e2e2; padding: 5px;}
+.close-fb-gallery:hover{color: #3563b9;}
+.gallery-inner{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
   background: #fff;
 }
-.mfp-container{position: fixed !important;}
-
+.mfp-wrap{z-index: 1041;}
 /*
 3.1.1 Skype Services
 ******************************************************************/

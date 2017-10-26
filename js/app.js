@@ -12,38 +12,33 @@ jQuery(document).ready(function($) {
     menuItems = topMenu.find("a"),
     // Anchors corresponding to menu items
     scrollItems = menuItems.map(function() {
-
       var href = $(this).attr("href");
       if (href.indexOf("#") === 0) {
-
         var item = $($(this).attr("href"));
         if (item.length) {
           return item;
         }
-
       }
     });
 
-    //blog menu script
+  //blog menu script
+  $('.nav li').click(function(e) {
+    $('.nav li').removeClass('active');
+    if ($('ul', this).hasClass('active')) {
+      $('ul', this).stop().slideUp(200);
+      $('ul', this).removeClass('active');
+    } else {
+      $('ul', this).stop().slideDown(200);
+      $('ul', this).addClass('active');
+    }
+    e.stopPropagation();
+  });
 
-    $('.nav li').click(function(e) {
-      $('.nav li').removeClass('active');
-        if($('ul', this).hasClass('active')){
-          $('ul', this).stop().slideUp(200);
-          $('ul', this).removeClass('active');
-        }else{
-          $('ul', this).stop().slideDown(200);
-          $('ul', this).addClass('active');
-        }
-        e.stopPropagation();
-    });
-
-    $('body, .nav').click(function(e) {
-      $('.nav li ul').stop().slideUp(200);
-      $('.nav li ul').removeClass('active');
-    });
-
-    //blog menu script end here
+  $('body, .nav').click(function(e) {
+    $('.nav li ul').stop().slideUp(200);
+    $('.nav li ul').removeClass('active');
+  });
+  //blog menu script end here
 
   //Get width of container
   var containerWidth = $('.section .container').width();
@@ -53,19 +48,12 @@ jQuery(document).ready(function($) {
 
   // Bind to scroll
   $(window).scroll(function() {
-
     //Display or hide scroll to top button
     if ($(this).scrollTop() > 100) {
       $('.scrollup').fadeIn();
     } else {
       $('.scrollup').fadeOut();
     }
-
-    // if ($(this).scrollTop() > 130) {
-    //   $('.navbar').addClass('navbar-fixed-top animated fadeInDown');
-    // } else {
-    //   $('.navbar').removeClass('navbar-fixed-top animated fadeInDown');
-    // }
 
     // Get container scroll position
     var fromTop = $(this).scrollTop() + topMenuHeight + 10;
@@ -134,13 +122,13 @@ jQuery(document).ready(function($) {
     });
   });
 
-  // $('.btn-navbar').click(function(e){
-  //   if($('body').hasClass('fixed')){
-  //       $('body').removeClass('fixed');
-  //   }else{
-  //     $('body').addClass('fixed');
-  //   }
-  // });
+  /*
+  Facebook gallary
+  **********************************************************************/
+  $('.close-fb-gallery').click(function(){
+    topMenu.parent().attr('style', 'height:0px').removeClass('in'); //Close navigation
+    $('.navbar .btn-navbar').addClass('collapsed');
+  });
   /*
   Sand mail
   **********************************************************************/
@@ -426,7 +414,7 @@ jQuery(document).ready(function($) {
 
   $('.close-services').click(function() {
     $('.services-data').hide();
-    $('body').css('overflow-y', 'scroll');
+    $('body').css('overflow-y', 'auto');
   });
 
   $('.skype-section .close-services').click(function() {
@@ -440,6 +428,20 @@ jQuery(document).ready(function($) {
     $('.skype-section').slideDown();
   });
   //Json data callback end
+
+  // Fb gallery
+
+  $('.fb-gallery-btn').click(function() {
+    $('.fb-gallery').css('visibility', 'visible');
+    $('.fb-gallery').show();
+    $('body').css('overflow-y', 'hidden');
+  });
+
+  $('.close-fb-gallery').click(function() {
+    $('.fb-gallery').hide();
+    $('body').css('overflow-y', 'auto');
+  });
+  // Fb gallery end here
 
   //News carousel
   var newsItem = $("#news");
@@ -471,7 +473,7 @@ jQuery(document).ready(function($) {
     autoplay: true,
     autoplayTimeout: performersItemTimer,
     autoplayHoverPause: true,
-    responsiveClass:true,
+    responsiveClass: true,
     autoHeight: true
   });
 
@@ -486,31 +488,44 @@ jQuery(document).ready(function($) {
 
   //Twitter widget
 
-  var widgetWrapper=$(".twitter-widget-holder");
-	/* initialize scrollbar */
-	widgetWrapper.mCustomScrollbar({
-		theme:"dark-3",
-		scrollButtons:{enable:true}
-	})
+  var widgetWrapper = $(".twitter-widget-holder");
+  /* initialize scrollbar */
+  widgetWrapper.mCustomScrollbar({
+      theme: "dark-3",
+      scrollButtons: {
+        enable: true
+      }
+    })
 
-	/* cross-domain mousewheel hack */
-	.on("mouseenter",function(){
-		$(this).find("iframe").css("pointer-events","none");
-		}).on("mouseup",function(){
-			if(!$(this).find(".mCSB_scrollTools_onDrag").length) return;
-			setTimeout(function(){ widgetWrapper.trigger("mouseenter"); },1);
-		});
-	$(window).on("blur",function(){
-		widgetWrapper.find("iframe").css("pointer-events","auto");
-	}).on("focus",function(){
-		widgetWrapper.trigger("mouseenter");
+    /* cross-domain mousewheel hack */
+    .on("mouseenter", function() {
+      $(this).find("iframe").css("pointer-events", "none");
+    }).on("mouseup", function() {
+      if (!$(this).find(".mCSB_scrollTools_onDrag").length) return;
+      setTimeout(function() {
+        widgetWrapper.trigger("mouseenter");
+      }, 1);
+    });
+  $(window).on("blur", function() {
+    widgetWrapper.find("iframe").css("pointer-events", "auto");
+  }).on("focus", function() {
+    widgetWrapper.trigger("mouseenter");
 
-	});
+  });
 
   /* insert twitter widget js in window load fn */
-  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  ! function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      p = /^http:/.test(d.location) ? 'http' : 'https';
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id = id;
+      js.src = p + "://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }
+  }(document, "script", "twitter-wjs");
 
-	//Twitter widget end here
+  //Twitter widget end here
 
 });
 
@@ -519,60 +534,64 @@ jQuery(document).ready(function($) {
 function initializeMap() {
 
   var map;
-    var bounds = new google.maps.LatLngBounds();
-    var mapOptions = {
-        mapTypeId: 'roadmap'
-    };
+  var bounds = new google.maps.LatLngBounds();
+  var mapOptions = {
+    mapTypeId: 'roadmap'
+  };
 
-    // Display a map on the page
-    map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-    map.setTilt(45);
+  // Display a map on the page
+  map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+  map.setTilt(45);
 
-    // Multiple Markers
-    var markers = [
-        ['Pune', 18.520430, 73.856744],
-        ['Mumbai', 19.075984, 72.877656],
-        ['Ahmedabad', 23.022505, 72.571362]
-    ];
+  // Multiple Markers
+  var markers = [
+    ['Pune', 18.520430, 73.856744],
+    ['Mumbai', 19.075984, 72.877656],
+    ['Ahmedabad', 23.022505, 72.571362]
+  ];
 
-    // Info Window Content
-    var infoWindowContent = [
-        ['<div class="info_content">' +
-        '<h4>Pune aimIB7&trade;</h4>' + '</div>'],
-        ['<div class="info_content">' +
-        '<h4>Mumbai aimIB7&trade;</h4>' + '</div>'],
-        ['<div class="info_content">' +
-        '<h4>Ahmedabad aimIB7&trade;</h4>' + '</div>']
-    ];
+  // Info Window Content
+  var infoWindowContent = [
+    ['<div class="info_content">' +
+      '<h4>Pune aimIB7&trade;</h4>' + '</div>'
+    ],
+    ['<div class="info_content">' +
+      '<h4>Mumbai aimIB7&trade;</h4>' + '</div>'
+    ],
+    ['<div class="info_content">' +
+      '<h4>Ahmedabad aimIB7&trade;</h4>' + '</div>'
+    ]
+  ];
 
-    // Display multiple markers on a map
-    var infoWindow = new google.maps.InfoWindow(), marker, i;
+  // Display multiple markers on a map
+  var infoWindow = new google.maps.InfoWindow(),
+    marker, i;
 
-    // Loop through our array of markers & place each one on the map
-    for( i = 0; i < markers.length; i++ ) {
-        var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-        bounds.extend(position);
-        marker = new google.maps.Marker({
-            position: position,
-            map: map,
-            title: markers[i][0]
-        });
-
-        // Allow each marker to have an info window
-        google.maps.event.addListener(marker, 'click', (function(marker, i) {
-            return function() {
-                infoWindow.setContent(infoWindowContent[i][0]);
-                infoWindow.open(map, marker);
-            }
-        })(marker, i));
-
-        // Automatically center the map fitting all markers on the screen
-        map.fitBounds(bounds);
-    }
-
-    // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
-    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-        google.maps.event.removeListener(boundsListener);
+  // Loop through our array of markers & place each one on the map
+  for (i = 0; i < markers.length; i++) {
+    var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+    bounds.extend(position);
+    marker = new google.maps.Marker({
+      position: position,
+      map: map,
+      title: markers[i][0]
     });
+
+    // Allow each marker to have an info window
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+      return function() {
+        infoWindow.setContent(infoWindowContent[i][0]);
+        infoWindow.open(map, marker);
+      }
+    })(marker, i));
+
+    // Automatically center the map fitting all markers on the screen
+    map.fitBounds(bounds);
+  }
+
+  // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+  var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+    google.maps.event.removeListener(boundsListener);
+  });
 
 }
